@@ -62,7 +62,7 @@ public class MainActivity extends TabActivity {
                 .setIndicator("Layout Tests")
                 .setContent(R.id.tab3));
 
-        // *** default badge ***
+        // *** default badge（默认的badge） ***
 
         View target = findViewById(R.id.default_target);
         BadgeView badge = new BadgeView(this, target);
@@ -82,7 +82,7 @@ public class MainActivity extends TabActivity {
             }
         });
 
-        // *** badge/text size & colour ***
+        // *** badge/text size & colour 更改badge的文字大小和颜色***
 
         btnColour = (Button) findViewById(R.id.colour_target);
         badge2 = new BadgeView(this, btnColour);
@@ -97,7 +97,7 @@ public class MainActivity extends TabActivity {
             }
         });
 
-        // *** default animation ***
+        // *** default animation 为badge设置默认动画***
 
         btnAnim1 = (Button) findViewById(R.id.anim1_target);
         badge3 = new BadgeView(this, btnAnim1);
@@ -109,7 +109,7 @@ public class MainActivity extends TabActivity {
             }
         });
 
-        // *** custom animation ***
+        // *** custom animation 为badge设置本地动画***
 
         btnAnim2 = (Button) findViewById(R.id.anim2_target);
         badge4 = new BadgeView(this, btnAnim2);
@@ -127,7 +127,7 @@ public class MainActivity extends TabActivity {
             }
         });
 
-        // *** custom background ***
+        // *** custom background 为badge设置本地背景***
 
         btnCustom = (Button) findViewById(R.id.custom_target);
         badge5 = new BadgeView(this, btnCustom);
@@ -141,7 +141,7 @@ public class MainActivity extends TabActivity {
             }
         });
 
-        // *** clickable badge ***
+        // *** clickable badge 为badge添加点击事件***
 
         btnClick = (Button) findViewById(R.id.click_target);
         badge6 = new BadgeView(this, btnClick);
@@ -161,7 +161,7 @@ public class MainActivity extends TabActivity {
             }
         });
 
-        // *** tab ***
+        // *** tab 桌面图标效果，部分手机支持***
 
         TabWidget tabs = (TabWidget) findViewById(android.R.id.tabs);
 
@@ -175,7 +175,7 @@ public class MainActivity extends TabActivity {
             }
         });
 
-        // *** increment ***
+        // *** increment （点击增加badge计数）***
 
         btnIncrement = (Button) findViewById(R.id.increment_target);
         badge8 = new BadgeView(this, btnIncrement);
@@ -191,7 +191,7 @@ public class MainActivity extends TabActivity {
             }
         });
 
-        // *** list adapter ****
+        // *** list adapter （list的适配器）****
 
         listDemo = (ListView) findViewById(R.id.tab2);
         listDemo.setAdapter(new BadgeAdapter(this));
@@ -205,42 +205,42 @@ public class MainActivity extends TabActivity {
         BadgeView badge;
         View target;
 
-        // *** test linear layout container ***
+        // *** test linear layout container （测试LinearLayout 容器添加Badge的效果）***
 
         target = findViewById(R.id.linear_target);
         badge = new BadgeView(this, target);
         badge.setText("OK");
         badge.show();
 
-        // *** test relative layout container ***
+        // *** test relative layout container （测试RelativeLayout 容器添加Badge的效果）***
 
         target = findViewById(R.id.relative_target);
         badge = new BadgeView(this, target);
         badge.setText("OK");
         badge.show();
 
-        // *** test frame layout container ***
+        // *** test frame layout container （测试FrameLayout 容器添加Badge的效果）***
 
         target = findViewById(R.id.frame_target);
         badge = new BadgeView(this, target);
         badge.setText("OK");
         badge.show();
 
-        // *** test table layout container ***
+        // *** test table layout container （测试TableLayout 容器 添加Badge的效果）***
 
         target = findViewById(R.id.table_target);
         badge = new BadgeView(this, target);
         badge.setText("OK");
         badge.show();
 
-        // *** test linear layout ***
+        // *** test linear layout （测试LinearLayout 添加Badge的效果）***
 
         target = findViewById(R.id.linear_group_target);
         badge = new BadgeView(this, target);
         badge.setText("OK");
         badge.show();
 
-        // *** test relative layout ***
+        // *** test relative layout（测试RelativeLayout添加badge的效果） ***
 
         target = findViewById(R.id.relative_group_target);
         badge = new BadgeView(this, target);
@@ -254,7 +254,7 @@ public class MainActivity extends TabActivity {
         badge.setText("OK");
         badge.show();
 
-        // *** test table layout ***
+        // *** test table layout (测试TableLayout添加badge的效果) ***
 
         target = findViewById(R.id.tablerow_group_target);
         badge = new BadgeView(this, target);
