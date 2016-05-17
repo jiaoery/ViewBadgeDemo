@@ -1,7 +1,7 @@
 # ViewBadgeDemo
 ViewBadge demo for personal use
 
-这是沿用https://github.com/jgilfelt/android-viewbadger这篇github所实现的一个中文demo。
+这是沿用https://github.com/jgilfelt/android-viewbadger   这篇github所实现的一个中文demo。
 
 ViewBadge用于在app内实现消息提醒，添加注解数目的一个工具包。主要的实现过程为（嵌入到自己的project）:
 
