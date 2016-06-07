@@ -21,32 +21,42 @@ ViewBadge用于在app内实现消息提醒，添加注解数目的一个工具�
 由于BadgeView是继承TextView，所以TextView所拥有的功能，BadgeView都拥有
 
 1.默认格式
+
            View target = findViewById(R.id.target_view);
            BadgeView badge = new BadgeView(this, target);
            badge.setText("1");
            badge.show();
+           
 2.设置所处位置
+
            badge1.setBadgePosition(BadgeView.POSITION_CENTER);
 
-         然后附下Badge中提供的位置参数
-         
+ 然后附下Badge中提供的位置参数
+ 
+ 
             public static final int POSITION_TOP_LEFT = 1;//顶部左边
             public static final int POSITION_TOP_RIGHT = 2;//顶部右边
             public static final int POSITION_BOTTOM_LEFT = 3;//底部左边
             public static final int POSITION_BOTTOM_RIGHT = 4;//底部右边
             public static final int POSITION_CENTER = 5;//中间
+            
+            
 3.设置badge的背景颜色/文字大小
+
            badge2.setTextColor(Color.BLUE);
            badge2.setBadgeBackgroundColor(Color.YELLOW);
            badge2.setTextSize(12);
+           
 4.更改badge的距离
+
            badge4.setBadgeMargin(15, 10);//前者为horizatal。后者为vertical方向
            
 5.更改动画效果
+
           TranslateAnimation anim = new TranslateAnimation(-100, 0, 0, 0);
-                anim.setInterpolator(new BounceInterpolator());
-                anim.setDuration(1000);
-                badge4.toggle(anim, null);//ain为进入时的动画，后为消失时的动画
+          anim.setInterpolator(new BounceInterpolator());
+          anim.setDuration(1000);
+          badge4.toggle(anim, null);//ain为进入时的动画，后为消失时的动画
                 
                 
                 
@@ -54,54 +64,59 @@ ViewBadge用于在app内实现消息提醒，添加注解数目的一个工具�
 其他的一些功能请看MainActivity的注解.附上BadgeView的源码
 
 
-     package viewbadge.langyi.viewbadgedemo.badgeview;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.RoundRectShape;
-import android.util.AttributeSet;
-import android.util.TypedValue;
-import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.ViewParent;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.FrameLayout;
-import android.widget.TabWidget;
-import android.widget.TextView;
 
-/**
- * A simple text label view that can be applied as a "badge" to any given {@link View}.
- * This class is intended to be instantiated at runtime rather than included in XML layouts.
- * 一个实例的text 标签，用来作为一个“标记”给其他控件
- * 这个类用于在运行时生成而非在xml布局中写出
- * @author Jeff Gilfelt
- */
-public class BadgeView extends TextView {
+    package viewbadge.langyi.viewbadgedemo.badgeview;
 
-	//位置参数
-	public static final int POSITION_TOP_LEFT = 1;
-	public static final int POSITION_TOP_RIGHT = 2;
-	public static final int POSITION_BOTTOM_LEFT = 3;
-	public static final int POSITION_BOTTOM_RIGHT = 4;
-	public static final int POSITION_CENTER = 5;
-
-	//默认距离 位置 颜色值
-	private static final int DEFAULT_MARGIN_DIP = 5;
-	private static final int DEFAULT_LR_PADDING_DIP = 5;
-	private static final int DEFAULT_CORNER_RADIUS_DIP = 8;
-	private static final int DEFAULT_POSITION = POSITION_TOP_RIGHT;
-	private static final int DEFAULT_BADGE_COLOR = Color.parseColor("#CCFF0000"); //Color.RED;
-	private static final int DEFAULT_TEXT_COLOR = Color.WHITE;
-
-	//默认弹进，弹出动画
+    import android.content.Context;
+    import android.content.res.Resources;
+    import android.graphics.Color;
+    import android.graphics.Typeface;
+    import android.graphics.drawable.ShapeDrawable;
+    import android.graphics.drawable.shapes.RoundRectShape;
+    import android.util.AttributeSet;
+    import android.util.TypedValue;
+    import android.view.Gravity;
+    import android.view.View;
+    import android.view.ViewGroup;
+    import android.view.ViewGroup.LayoutParams;
+    import android.view.ViewParent;
+    import android.view.animation.AccelerateInterpolator;
+    import android.view.animation.AlphaAnimation;
+    import android.view.animation.Animation;
+    import android.view.animation.DecelerateInterpolator;
+    import android.widget.FrameLayout;
+    import android.widget.TabWidget;
+    import android.widget.TextView;
+    /**
+     * A simple text label view that can be applied as a "badge" to any given {@link View}.
+     * This class is intended to be instantiated at runtime rather than included in XML layouts.
+     * 一个实例的text 标签，用来作为一个“标记”给其他控件
+     * 这个类用于在运行时生成而非在xml布局中写出
+     * @author Jeff Gilfelt
+     */
+    public class BadgeView extends TextView {
+    
+//位置参数
+     
+    public static final int POSITION_TOP_LEFT = 1;
+    public static final int POSITION_TOP_RIGHT = 2;
+    public static final int POSITION_BOTTOM_LEFT = 3;
+    public static final int POSITION_BOTTOM_RIGHT = 4;
+    public static final int POSITION_CENTER = 5;
+    
+    
+    //默认距离 位置 颜色值
+    
+    
+    private static final int DEFAULT_MARGIN_DIP = 5;
+    private static final int DEFAULT_LR_PADDING_DIP = 5;
+    private static final int DEFAULT_CORNER_RADIUS_DIP = 8;
+    private static final int DEFAULT_POSITION = POSITION_TOP_RIGHT;
+    private static final int DEFAULT_BADGE_COLOR = Color.parseColor("#CCFF0000"); //Color.RED;
+    private static final int DEFAULT_TEXT_COLOR = Color.WHITE;
+    //默认弹进，弹出动画
+	
 	private static Animation fadeIn;
 	private static Animation fadeOut;
 	
